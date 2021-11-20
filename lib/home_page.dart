@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:video_player_app/video_info.dart';
 import 'colors.dart' as color;
 import 'widgets/play_container_widget.dart';
 import 'widgets/encouragement_container.dart';
@@ -17,7 +19,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: color.AppColor.homePageBackground,
       body: Container(
-        padding: const EdgeInsets.only(top: 50, left: 30, right: 30),
+        padding: const EdgeInsets.only(top: 70, left: 30, right: 30),
         child: Column(
           children: [
             Row(
@@ -74,9 +76,14 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   width: 5,
                 ),
-                const Icon(
-                  Icons.arrow_forward,
-                  size: 20,
+                InkWell(
+                  onTap: (){
+                    Get.to(()=> const VideoInfo());
+                  },
+                  child: const Icon(
+                    Icons.arrow_forward,
+                    size: 20,
+                  ),
                 ),
               ],
             ),
